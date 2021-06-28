@@ -14,3 +14,4 @@ class Product(models.Model):
     color = models.CharField(max_length=200, null=True)
     created_at = timezone.now
     updated_at = timezone.now
+    

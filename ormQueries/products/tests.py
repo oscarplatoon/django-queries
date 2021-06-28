@@ -11,6 +11,7 @@ class ProductCrudTestCase(TestCase):
     def test_01_get_all_products(self):
         """Returns all Products"""
         product_crud = ProductCrud.get_all_products()
+
         product = Product.objects.all()
         self.assertEqual(list(product_crud), list(product))
 
@@ -107,6 +108,7 @@ class ProductCrudTestCase(TestCase):
     def test_18_longest_model_name(self):
         """returns the id of the product with the longest model name"""
         product_crud = ProductCrud.longest_model_name()
+ 
         self.assertEquals(product_crud, 25)
 
     def test_19_ordered_by_model_length(self):

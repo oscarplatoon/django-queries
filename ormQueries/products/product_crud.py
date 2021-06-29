@@ -11,7 +11,7 @@ class ProductCrud:
 
     @classmethod
     def find_by_model(cls, model_name):
-        return Product.objects.get(model="Heavy Duty Steel Clock")
+        return Product.objects.get(model=model_name)
 
     @classmethod
     def last_record(cls):

@@ -66,51 +66,51 @@ class ProductCrudTestCase(TestCase):
         product_ids = get_query_ids(product_crud)
         self.assertEquals(product_ids, [1, 18, 10, 27, 29, 21, 9, 7, 15, 5, 19, 8, 4, 30, 14, 22, 16, 13, 26, 3, 28, 23, 24, 25, 17, 12, 2, 20, 11, 6])
 
-    # def test_11_products_by_manufacturer(self):
-    #     """returns products made by manufacturers with names containing an input string"""
-    #     product_crud = ProductCrud.products_by_manufacturer_with_name_like('Group')
-    #     product_ids = get_query_ids(product_crud)
-    #     self.assertEquals(product_ids, [2, 3, 6, 29])
+    def test_11_products_by_manufacturer(self):
+        """returns products made by manufacturers with names containing an input string"""
+        product_crud = ProductCrud.products_by_manufacturer_with_name_like('Group')
+        product_ids = get_query_ids(product_crud)
+        self.assertEquals(product_ids, [2, 3, 6, 29])
 
-    # def test_12_manufacturer_names_for_query(self):
-    #     """returns a list of manufacturer names that match query"""
-    #     product_crud = ProductCrud.manufacturer_names_for_query('Group')
-    #     self.assertCountEqual(product_crud, ["Lakin Group", "Nikolaus Group","Rolfson Group", "Watsica Group"])
+    def test_12_manufacturer_names_for_query(self):
+        """returns a list of manufacturer names that match query"""
+        product_crud = ProductCrud.manufacturer_names_for_query('Group')
+        self.assertCountEqual(product_crud, ["Lakin Group", "Nikolaus Group","Rolfson Group", "Watsica Group"])
 
-    # def test_13_not_in_a_category(self):
-    #     """returns products that are not in a category"""
-    #     product_crud = ProductCrud.not_in_a_category('Garden')
-    #     product_ids = get_query_ids(product_crud)
-    #     self.assertEquals(product_ids, list(range(1,30)))
+    def test_13_not_in_a_category(self):
+        """returns products that are not in a category"""
+        product_crud = ProductCrud.not_in_a_category('Garden')
+        product_ids = get_query_ids(product_crud)
+        self.assertEquals(product_ids, list(range(1,30)))
 
-    # def test_14_limited_not_in_a_category(self):
-    #     """returns products that are not in a category up to a limit"""
-    #     product_crud = ProductCrud.limited_not_in_a_category('Garden', 3)
-    #     product_ids = get_query_ids(product_crud)
-    #     self.assertEquals(product_ids, [1, 2, 3 ])
+    def test_14_limited_not_in_a_category(self):
+        """returns products that are not in a category up to a limit"""
+        product_crud = ProductCrud.limited_not_in_a_category('Garden', 3)
+        product_ids = get_query_ids(product_crud)
+        self.assertEquals(product_ids, [1, 2, 3 ])
 
-    # def test_15_category_manufacturers(self):
-    #     """returns an array of manufacturers for a category"""
-    #     product_crud = ProductCrud.category_manufacturers('Baby')
-    #     self.assertCountEqual(product_crud,["Cormier, Rice and Ledner", "Crooks, Pacocha and Rohan","Howell, Hills and Dickens", "Muller-Koss", "Rolfson Group"])
+    def test_15_category_manufacturers(self):
+        """returns an array of manufacturers for a category"""
+        product_crud = ProductCrud.category_manufacturers('Baby')
+        self.assertCountEqual(product_crud,["Cormier, Rice and Ledner", "Crooks, Pacocha and Rohan","Howell, Hills and Dickens", "Muller-Koss", "Rolfson Group"])
 
-    # def test_16_average_category_rating(self):
-    #     """returns the average"""
-    #     product_crud = ProductCrud.average_category_rating('Baby')
-    #     self.assertEqual(product_crud['rating__avg'], 2.32)
+    def test_16_average_category_rating(self):
+        """returns the average"""
+        product_crud = ProductCrud.average_category_rating('Baby')
+        self.assertEqual(product_crud['rating__avg'], 2.32)
 
-    # def test_17_greatest_price(self):
-    #     """returns the highest price"""
-    #     product_crud = ProductCrud.greatest_price()
-    #     self.assertEquals(product_crud['price_cents__max'], 9758)
+    def test_17_greatest_price(self):
+        """returns the highest price"""
+        product_crud = ProductCrud.greatest_price()
+        self.assertEquals(product_crud['price_cents__max'], 9758)
 
-    # def test_18_longest_model_name(self):
-    #     """returns the id of the product with the longest model name"""
-    #     product_crud = ProductCrud.longest_model_name()
-    #     self.assertEquals(product_crud, 25)
+    def test_18_longest_model_name(self):
+        """returns the id of the product with the longest model name"""
+        product_crud = ProductCrud.longest_model_name()
+        self.assertEquals(product_crud, 25)
 
-    # def test_19_ordered_by_model_length(self):
-    #     """returns products ordered by the length of their model name"""
-    #     product_crud = ProductCrud.ordered_by_model_length()
-    #     product_ids = get_query_ids(product_crud)
-    #     self.assertEquals(product_ids, [8, 28, 15, 11, 27, 5, 17, 10, 7, 1, 9, 12, 26, 30, 2, 13, 3, 4, 21, 24, 29, 16, 14, 20, 23, 18, 6, 22, 19, 25])
+    def test_19_ordered_by_model_length(self):
+        """returns products ordered by the length of their model name"""
+        product_crud = ProductCrud.ordered_by_model_length()
+        product_ids = get_query_ids(product_crud)
+        self.assertEquals(product_ids, [8, 28, 15, 11, 27, 5, 17, 10, 7, 1, 9, 12, 26, 30, 2, 13, 3, 4, 21, 24, 29, 16, 14, 20, 23, 18, 6, 22, 19, 25])

@@ -18,8 +18,8 @@ class ProductCrud:
         return Product.objects.last()
 
     @classmethod
-    def by_rating(cls, rating):
-        return Product.objects.filter(rating__exact = 3.5)
+    def by_rating(cls, input_rating):
+        return Product.objects.filter(rating__exact = input_rating)
 
     @classmethod
     def by_rating_range(cls, lower_bound, upper_bound):
